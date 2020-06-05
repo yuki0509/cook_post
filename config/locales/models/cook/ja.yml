@@ -1,8 +1,0 @@
-ja:
-  activerecord:
-    models:
-      cook: 料理
-    attributes:
-      cook:
-        name: 名前
-        how_to: 作り方

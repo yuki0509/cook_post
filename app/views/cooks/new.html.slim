@@ -1,8 +1,6 @@
-= form_with model: @cook, local: true do |f|
-    .form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control'
-    .form-group
-        = f.label :how_to
-        = f.text_field :how_to, class: 'form-control'
-    = f.submit nil, class: 'btn btn-primary'
+h1.mt-1 新規投稿
+
+.nav.justify-content-end
+    = link_to  "投稿一覧", cooks_path,class: 'nav-link'
+
+= render "form", cook: @cook

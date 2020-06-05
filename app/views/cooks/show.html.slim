@@ -1,2 +1,29 @@
-h1 Cooks#show
-p Find me in app/views/cooks/show.html.slim
+h1 投稿詳細  
+
+.nav.justify-content-end
+    = link_to  '投稿一覧', cooks_path 
+
+table.table.table-hover
+    tbody
+        tr
+            th= Cook.human_attribute_name(:id)
+            td= @cook.id
+        tr
+            th= Cook.human_attribute_name(:name)
+            td= @cook.name
+        tr
+            th= Cook.human_attribute_name(:how_to)
+            td= simple_format(@cook.how_to)
+        tr
+            th= Cook.human_attribute_name(:image)
+            td= image_tag @cook.image.variant(combine_options:{resize:"500x500^",crop:"500x500+0+0",gravity: :center}).processed if @cook.image.attached? 
+        tr
+            th= Cook.human_attribute_name(:created_at)
+            td= @cook.created_at
+        tr
+            th= Cook.human_attribute_name(:updated_at)
+            td= @cook.updated_at
+
+= link_to  "投稿編集", edit_cook_path, class: 'btn btn-primary mr-3' 
+= link_to  "投稿削除", @cook,method: :delete, data:{ confirm: "投稿「#{@cook.name}」を削除しますか？"},
+class: 'btn btn-danger ' 

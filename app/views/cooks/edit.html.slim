@@ -1,2 +1,6 @@
-h1 Cooks#edit
-p Find me in app/views/cooks/edit.html.slim
+h1 投稿編集
+
+.nav.justify-content-end
+    = link_to  "投稿一覧", cooks_path,class: 'nav-link'
+
+= render "form", cook: @cook 

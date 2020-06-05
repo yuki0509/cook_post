@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      cook: 料理
+      user: ユーザー
+    attributes:
+      cook:
+        name: 名前
+        how_to: 作り方
+        image: 料理画像
+  attributes:
+    id: ID
+    created_at: 投稿作成日 
+    updated_at: 投稿更新日
