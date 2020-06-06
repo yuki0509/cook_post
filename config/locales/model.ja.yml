@@ -8,6 +8,12 @@ ja:
         name: 名前
         how_to: 作り方
         image: 料理画像
+      user:
+        name: 名前
+        email: メールアドレス
+        admin: 管理権
+        password: パスワード
+        password_confirmation: パスワード確認
   attributes:
     id: ID
     created_at: 投稿作成日 

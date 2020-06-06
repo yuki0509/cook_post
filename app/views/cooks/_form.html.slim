@@ -1,3 +1,8 @@
+- if cook.errors.present?
+    ul#errer_explanation
+        - cook.errors.full_messages.each do |msg|
+            li= msg
+
 = form_with model: cook, local: true do |f|
     .form-group
         = f.label :name

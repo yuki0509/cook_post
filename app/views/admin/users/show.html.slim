@@ -1,0 +1,33 @@
+h1 ユーザー情報
+
+.nav.justify-content-end
+    = link_to  "ユーザー一覧", admin_users_path, class: 'nav-link'
+
+.row
+    .col-sm-4.profile
+        =image_tag @user.image.variant(combine_options:{resize:"350x350^",crop:"500x500+0+0",gravity: :center}).processed if @user.image.attached?
+
+    table.table.table-hover.col-sm-8
+        tbody
+            tr
+                th= User.human_attribute_name(:id)
+                td= @user.id
+            tr
+                th= User.human_attribute_name(:name)
+                td= @user.name
+            tr
+                th= User.human_attribute_name(:email)
+                td= @user.email
+            tr
+                th= User.human_attribute_name(:admin)
+                td= @user.admin? ? 'あり' : 'なし'
+            tr
+                th= User.human_attribute_name(:created_at)
+                td= @user.created_at
+            tr
+                th= User.human_attribute_name(:updated_at)
+                td= @user.updated_at
+.nav.justify-content-end
+    = link_to  "ユーザー編集", edit_admin_user_path, class: 'btn btn-primary mr-3' 
+    = link_to  "ユーザー削除", admin_user_path(@user),method: :delete, data:{ confirm: "投稿「#{@user.name}」を削除しますか？"},
+    class: 'btn btn-danger' 
