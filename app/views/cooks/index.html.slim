@@ -6,7 +6,7 @@ table.table.table-hover
     thead
         tr
             th= Cook.human_attribute_name(:name) 
-            th= Cook.human_attribute_name(:how_to)
+            th= sort_link(@q, :created_at, default_order: :desc)
             th
     tbody
         - @cooks.each do |cook|
@@ -17,4 +17,6 @@ table.table.table-hover
                   = link_to  '編集', edit_cook_path(cook), class: 'btn btn-primary mr-3'
                   = link_to  '削除', cook, method: :delete, data:{ confirm: "投稿「#{cook.name}」を削除しますか？"},
                   class: 'btn btn-danger'
-                
+
+= paginate @cooks
+= page_entries_info @cooks

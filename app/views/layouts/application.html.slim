@@ -12,10 +12,12 @@ html
       .navbar-brand CookingPost
       ul.navbar-nav.ml-auto
         - if current_user
-          li.nav-item= link_to '投稿一覧', cooks_path, class: 'nav-link'
+          li.nav-item= link_to "#{current_user.name}の投稿一覧", cooks_path, class: 'nav-link mr-2'
+          = search_form_for @q, class: "form-inline" do |f| 
+            =f.search_field :name_cont, class: 'form-control mr-2',placeholder: "料理名"
           -if current_user.admin?
-            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
-          li.nav-item= link_to 'ログアウト', logout_path,method: :delete, class: 'nav-link'
+            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link mr-2'
+          li.nav-item= link_to 'ログアウト', logout_path,method: :delete, class: 'nav-link mr-2'
         - else
           li.nav-item= link_to 'ログイン', login_path, class: 'nav-link' 
 

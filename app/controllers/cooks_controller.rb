@@ -2,7 +2,7 @@ class CooksController < ApplicationController
   before_action :set_cook, only: [:show, :edit, :update, :destroy]
   
   def index
-    @cooks = current_user.cooks.all
+    @cooks = @q.result(distinct: true).page(params[:page]).per(30)
   end
 
   def new
