@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :login_required, :set_search
+  skip_before_action :login_required, :set_search_query
 
   def new
   end

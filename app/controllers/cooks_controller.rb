@@ -2,7 +2,13 @@ class CooksController < ApplicationController
   before_action :set_cook, only: [:show, :edit, :update, :destroy]
   
   def index
-    @cooks = @q.result(distinct: true).page(params[:page]).per(30)
+    @cooks = @q.result(distinct: true).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html 
+      format.csv {send_data @cooks.generate_csv, file_name:
+        "cooks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv"}
+    end
   end
 
   def new
