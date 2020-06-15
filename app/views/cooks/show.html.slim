@@ -16,7 +16,7 @@ table.table.table-hover
             td= simple_format(@cook.how_to)
         tr
             th= Cook.human_attribute_name(:image)
-            td= image_tag @cook.image if @cook.image.attached? 
+            td= image_tag @cook.image.variant(combine_options:{ resize: "300^", gravity: "Center", crop: "300x300+0+0", auto_orient: true}) if @cook.image.attached? 
         tr
             th= Cook.human_attribute_name(:created_at)
             td= @cook.created_at
