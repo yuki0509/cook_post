@@ -13,7 +13,6 @@ class Cook < ApplicationRecord
             all.each do |cook|
                 csv << csv_attributes.map{|attr| cook.send(attr)}
             end
-            binding.pry
         end
     end
     
