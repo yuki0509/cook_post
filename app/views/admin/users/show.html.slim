@@ -5,7 +5,7 @@ h1 ユーザー情報
 
 .row
     .col-sm-4.profile
-        =image_tag @user.image.variant(combine_options:{resize:"350x350^",crop:"500x500+0+0",gravity: :center}).processed if @user.image.attached?
+        =image_tag @user.image.variant(combine_options:{resize:"300^",crop:"300x300+0+0",gravity: "Center", auto_orient: true})if @user.image.attached?
 
     table.table.table-hover.col-sm-8
         tbody
