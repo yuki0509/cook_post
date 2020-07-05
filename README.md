@@ -1,24 +1,11 @@
-# README
+# Railsのアウトプットとして作成
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- CRUD機能  
+- ログイン機能
+- 管理者機能
+- 検索機能(Ransack使用)
+- CSV出力
+- 画像投稿機能(ActiveStorage使用)
+の機能を実装。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+DBはPostgreSQLをしよう。
